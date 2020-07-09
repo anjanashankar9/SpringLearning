@@ -11,6 +11,11 @@
     <bean id="myFortune" class="springdemo.HappyFortuneService">
     </bean>
 
+    <bean id="myCricketCoach" class="springdemo.CricketCoach">
+        <!-- set up setter injection -->
+        <property name="fortuneService" ref="myFortune" />
+    </bean>
+
     <bean id="myCoach"
         class="springdemo.BaseballCoach">
         <!-- set up constructor injection -->

@@ -15,6 +15,13 @@ public class HelloSpringApp {
         System.out.println(theCoach.getDailyWorkout());
         System.out.println(theCoach.getDailyFortune());
 
+
+        //retrieve another bean from the container
+        CricketCoach cricketCoach = context.getBean("myCricketCoach", CricketCoach.class);
+
+        System.out.println(cricketCoach.getDailyWorkout());
+        System.out.println(cricketCoach.getDailyFortune());
+
         //close the context
         context.close();
     }
