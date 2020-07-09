@@ -9,11 +9,11 @@ public class HelloSpringApp {
             new ClassPathXmlApplicationContext("applicationContext.xml");
 
         //retrieve the bean from spring container
-        Coach theCoach = context.getBean("myCoach", Coach.class);
+        /*Coach theCoach = context.getBean("myCoach", Coach.class);
 
         //call methods on the bean
         System.out.println(theCoach.getDailyWorkout());
-        System.out.println(theCoach.getDailyFortune());
+        System.out.println(theCoach.getDailyFortune());*/
 
 
         //retrieve another bean from the container
@@ -21,6 +21,8 @@ public class HelloSpringApp {
 
         System.out.println(cricketCoach.getDailyWorkout());
         System.out.println(cricketCoach.getDailyFortune());
+        System.out.println(cricketCoach.getEmailAddress());
+        System.out.println(cricketCoach.getTeam());
 
         //close the context
         context.close();
