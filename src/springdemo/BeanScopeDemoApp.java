@@ -5,7 +5,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class BeanScopeDemoApp {
     public static void main(String[] args) {
         ClassPathXmlApplicationContext context =
-                new ClassPathXmlApplicationContext("beanscope-applicationContext.xml");
+                new ClassPathXmlApplicationContext("springdemo/beanscope-applicationContext.xml");
 
         Coach theCoach = context.getBean("myCoach", Coach.class);
 
