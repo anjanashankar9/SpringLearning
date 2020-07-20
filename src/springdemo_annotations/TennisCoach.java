@@ -9,7 +9,8 @@ public class TennisCoach implements Coach {
     private FortuneService fortuneService;
 
     @Autowired
-    TennisCoach(FortuneService fortuneService) {
+    public void setFortuneService(FortuneService fortuneService) {
+        System.out.println("Inside Setter");
         this.fortuneService = fortuneService;
     }
 
