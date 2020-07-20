@@ -8,13 +8,19 @@ public class TennisCoach implements Coach {
 
     private FortuneService fortuneService;
 
-    @Autowired
+    /*@Autowired
     public void setFortuneService(FortuneService fortuneService) {
         System.out.println("Inside Setter");
         this.fortuneService = fortuneService;
+    }*/
+
+    @Autowired
+    public void methodInjection(FortuneService fortuneService) {
+        System.out.println("Inside Method");
+        this.fortuneService = fortuneService;
     }
 
-    @Override
+        @Override
     public String getDailyWorkout() {
         return "Practice your backhand volley";
     }
