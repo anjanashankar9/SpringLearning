@@ -2,10 +2,16 @@ package springdemo_annotations;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
-@Component("thatTennisCoach")
+@Component
+@Scope("prototype")
 public class TennisCoach implements Coach {
+
+    TennisCoach() {
+        System.out.println("Inside constructor");
+    }
 
     @Autowired
     @Qualifier("randomFortuneService")
