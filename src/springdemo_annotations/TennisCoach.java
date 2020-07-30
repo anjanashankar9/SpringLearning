@@ -5,12 +5,26 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 @Component
-@Scope("prototype")
 public class TennisCoach implements Coach {
 
     TennisCoach() {
         System.out.println("Inside constructor");
+    }
+
+    // define my init method
+    @PostConstruct
+    public void doMyStartupStuff() {
+        System.out.println(" TennisCoach : inside of doMyStartupStuff()");
+    }
+
+    // define my cleanup method
+    @PreDestroy
+    public void doMyCleanupStuff() {
+        System.out.println(" TennisCoach : inside of cleanup()");
     }
 
     @Autowired
